@@ -1,22 +1,23 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
+import { getCloudinaryUrl, SCHOOL_IMAGES } from '../utils/cloudinary'
 import './NossaEscola.scss'
 
 const NossaEscola: React.FC = () => {
   const infrastructure = [
-    { name: 'Quadra esportiva coberta', image: '/imagens/Ilda vieira vilela (6).jpeg', icon: '🏀' },
-    { name: 'Laboratório de ciências', image: '/imagens/Ilda vieira vilela (7).jpeg', icon: '🔬' },
-    { name: 'Laboratório de farmácia', image: '/imagens/Ilda vieira vilela (8).jpeg', icon: '💊' },
-    { name: 'Laboratório de química', image: '/imagens/Ilda vieira vilela (9).jpeg', icon: '⚗️' },
-    { name: 'Biblioteca/Sala de leitura', image: '/imagens/Ilda vieira vilela (3).webp', icon: '📚' },
-    { name: 'Sala de informática', image: '/imagens/Ilda vieira vilela (1).webp', icon: '💻' },
-    { name: 'Refeitório', image: '/imagens/Ilda vieira vilela (2).webp', icon: '🍽️' },
-    { name: 'Pátio coberto e descoberto', image: '/imagens/Ilda vieira vilela (4).webp', icon: '🌳' },
-    { name: 'Auditório', image: '/imagens/Ilda vieira vilela (5).webp', icon: '🎭' },
-    { name: 'Salas de aula climatizadas', image: '/imagens/Ilda vieira vilela (1).jpg', icon: '🏫' },
-    { name: 'Secretaria', image: '/imagens/Ilda vieira vilela (2).jpg', icon: '📋' },
-    { name: 'Entrada principal', image: '/imagens/Ilda vieira vilela (3).jpg', icon: '🚪' }
+    { name: 'Quadra esportiva coberta', image: getCloudinaryUrl(SCHOOL_IMAGES.quadra, { width: 400, quality: 85 }), icon: '🏀' },
+    { name: 'Laboratório de ciências', image: getCloudinaryUrl(SCHOOL_IMAGES.laboratorio, { width: 400, quality: 85 }), icon: '🔬' },
+    { name: 'Laboratório de farmácia', image: getCloudinaryUrl(SCHOOL_IMAGES.laboratorioFarmacia, { width: 400, quality: 85 }), icon: '💊' },
+    { name: 'Laboratório de química', image: getCloudinaryUrl(SCHOOL_IMAGES.laboratorioQuimica, { width: 400, quality: 85 }), icon: '⚗️' },
+    { name: 'Biblioteca/Sala de leitura', image: getCloudinaryUrl(SCHOOL_IMAGES.biblioteca, { width: 400, quality: 85 }), icon: '📚' },
+    { name: 'Sala de informática', image: getCloudinaryUrl(SCHOOL_IMAGES.salaInformatica, { width: 400, quality: 85 }), icon: '💻' },
+    { name: 'Refeitório', image: getCloudinaryUrl(SCHOOL_IMAGES.refeitorio, { width: 400, quality: 85 }), icon: '🍽️' },
+    { name: 'Pátio coberto e descoberto', image: getCloudinaryUrl(SCHOOL_IMAGES.patio, { width: 400, quality: 85 }), icon: '🌳' },
+    { name: 'Auditório', image: getCloudinaryUrl(SCHOOL_IMAGES.auditorio, { width: 400, quality: 85 }), icon: '🎭' },
+    { name: 'Salas de aula climatizadas', image: getCloudinaryUrl(SCHOOL_IMAGES.salaAula, { width: 400, quality: 85 }), icon: '🏫' },
+    { name: 'Secretaria', image: getCloudinaryUrl(SCHOOL_IMAGES.secretaria, { width: 400, quality: 85 }), icon: '📋' },
+    { name: 'Entrada principal', image: getCloudinaryUrl(SCHOOL_IMAGES.entradaPrincipal, { width: 400, quality: 85 }), icon: '🚪' }
   ]
 
   const management = [
@@ -42,13 +43,9 @@ const NossaEscola: React.FC = () => {
       <section className="page-hero">
         <div className="page-hero__background">
           <img 
-            src="/imagens/Ilda vieira vilela (4).webp"
+            src={getCloudinaryUrl(SCHOOL_IMAGES.hero, { width: 1920, quality: 80, format: 'webp' })}
             alt="Escola Ilda Vieira Vilela"
             className="page-hero__bg-image"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/imagens/Ilda vieira vilela (4).jpg";
-            }}
           />
           <div className="page-hero__overlay"></div>
         </div>
@@ -195,15 +192,6 @@ const NossaEscola: React.FC = () => {
                     src={item.image}
                     alt={item.name}
                     loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      // Fallback para versão jpg se webp falhar
-                      if (target.src.includes('.webp')) {
-                        target.src = target.src.replace('.webp', '.jpg');
-                      } else if (target.src.includes('.jpg')) {
-                        target.src = target.src.replace('.jpg', '.png');
-                      }
-                    }}
                   />
                   <div className="infrastructure__card-icon">{item.icon}</div>
                 </div>

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import type { Course } from '../types'
+import { getCloudinaryUrl, SCHOOL_IMAGES } from '../utils/cloudinary'
 import './Cursos.scss'
 
 const Cursos: React.FC = () => {
@@ -114,13 +115,9 @@ const Cursos: React.FC = () => {
       <section className="page-hero">
         <div className="page-hero__background">
           <img 
-            src="/imagens/Ilda vieira vilela (1).webp"
+            src={getCloudinaryUrl(SCHOOL_IMAGES.salaInformatica, { width: 1920, quality: 80, format: 'webp' })}
             alt="Sala de informática da Escola Ilda Vieira Vilela"
             className="page-hero__bg-image"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/imagens/Ilda vieira vilela (1).jpg";
-            }}
           />
           <div className="page-hero__overlay"></div>
         </div>

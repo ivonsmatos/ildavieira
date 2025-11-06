@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { getCloudinaryUrl, SCHOOL_IMAGES } from '../utils/cloudinary'
 import './Home.scss'
 
 const Home: React.FC = () => {
@@ -55,14 +56,10 @@ const Home: React.FC = () => {
       <section className="hero" ref={heroRef}>
         <div className="hero__background">
           <img 
-            src="/imagens/Ilda vieira vilela (4).webp"
+            src={getCloudinaryUrl(SCHOOL_IMAGES.hero, { width: 1920, quality: 80, format: 'webp' })}
             alt="Fachada da Escola Ilda Vieira Vilela"
             className="hero__bg-image"
             loading="eager"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "/imagens/Ilda vieira vilela (4).jpg";
-            }}
           />
           <div className="hero__overlay"></div>
         </div>
@@ -123,13 +120,9 @@ const Home: React.FC = () => {
             </div>
             <div className="about__image">
               <img 
-                src="/imagens/Ilda vieira vilela (5).webp"
+                src={getCloudinaryUrl(SCHOOL_IMAGES.entradaPrincipal, { width: 600, quality: 85, format: 'webp' })}
                 alt="Entrada principal da Escola Ilda Vieira Vilela"
                 loading="lazy"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "/imagens/Ilda vieira vilela (5).jpeg";
-                }}
               />
             </div>
           </motion.div>
