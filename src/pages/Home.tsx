@@ -56,7 +56,7 @@ const Home: React.FC = () => {
       <section className="hero" ref={heroRef}>
         <div className="hero__background">
           <img 
-            src="https://res.cloudinary.com/dywhdgppg/image/upload/v1762401470/Ilda_vieira_vilela_3_dclr4v.jpg"
+            src="https://res.cloudinary.com/dywhdgppg/image/upload/c_fill,q_80,f_webp,w_1920/v1762401470/Ilda_vieira_vilela_3_dclr4v.jpg"
             alt="Fachada da Escola Ilda Vieira Vilela"
             className="hero__bg-image"
             loading="eager"
