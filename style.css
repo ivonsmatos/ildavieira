@@ -1,0 +1,307 @@
+/* Variáveis de Cores (Verde Clara e Neutros) */
+:root {
+    --primary-green: #4CAF50; /* Verde clara principal (Verde vibrante e corporativo) */
+    --dark-green: #388E3C; /* Verde mais escuro para hover */
+    --light-green-bg: #E8F5E9; /* Fundo de seção bem claro, quase branco-esverdeado */
+    --text-color: #333;
+    --white: #fff;
+    --gray-light: #B9F6CA; /* Um verde bem claro, para links no rodapé */
+    --shadow-soft: rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    --footer-bg: #1B5E20; /* Verde Escuro para o rodapé */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Adicionando transição global para movimentos mais suaves */
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* 1. Cabeçalho (Header) - Limpo e Fixo */
+header {
+    background-color: var(--white);
+    border-bottom: 3px solid var(--primary-green); /* Mudança de cor */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-soft);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--primary-green); /* Mudança de cor */
+    text-decoration: none;
+    font-size: 1.8em; 
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: var(--dark-green); /* Mudança de cor */
+    border-bottom: 3px solid var(--primary-green); /* Mudança de cor */
+}
+
+/* 2. Estilo das Seções */
+.section-content {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-content:nth-child(even) {
+    background-color: var(--light-green-bg); /* Mudança de cor */
+}
+
+.section-content h2 {
+    font-size: 2.5em;
+    color: var(--dark-green); /* Mudança de cor */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.section-content p.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.text-left { /* Usado na seção Nossa Escola */
+    text-align: left !important;
+}
+
+/* 3. Hero Section (Banner e Chama) */
+.hero {
+    /* Define o caminho da imagem de fundo */
+    background-image: url('imagens/IMG_5487.jpg'); 
+    
+    /* Configurações da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área da seção */
+    background-position: center; /* Centraliza a imagem no fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    
+    /* Define uma altura mínima para a seção, se necessário */
+    min-height: 500px; 
+    
+    /* Configura o layout (se for um flexbox, mantenha seu código original) */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    text-align: center;
+}
+
+
+
+/* Opcional: Garante que o texto dentro do <h1> e <p> seja branco */
+.hero-content h1, .hero-content p {
+    color: rgb(255, 255, 255);
+}
+
+.hero h1 {
+    font-size: 4em; /* Título maior */
+    margin-bottom: 15px;
+    font-weight: 900; /* Mais peso */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.6em; /* Texto maior */
+    margin-bottom: 50px;
+    opacity: 1; 
+}
+
+/* 4. Botão CTA */
+.cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-green); /* Mudança de cor */
+    padding: 18px 45px;
+    border-radius: 50px; 
+    font-weight: bold;
+    font-size: 1.3em; 
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra mais forte no estado normal */
+}
+
+.cta-button:hover {
+    background-color: var(--dark-green); /* Mudança de cor */
+    color: var(--white);
+    transform: scale(1.05) translateY(-5px); /* Efeito de "subir" e crescer */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-small { 
+    padding: 10px 20px; 
+    font-size: 1em; 
+    margin-top: 10px; 
+    border-radius: 5px;
+    box-shadow: none; /* Remove a sombra forte dos botões pequenos */
+}
+
+.cta-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px var(--shadow-soft);
+}
+
+/* 5. Seção Nossa Escola */
+.description-info {
+    display: flex;
+    text-align: left;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.school-text {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.school-info {
+    flex: 1;
+    background-color: var(--white);
+    padding: 30px;
+    border-top: 5px solid var(--primary-green); /* Mudança de cor */
+    border-radius: 12px; /* Bordas mais suaves */
+    box-shadow: 0 6px 20px var(--shadow-soft);
+}
+
+/* 6. Grade de Imagens (Galeria) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.image-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-soft);
+}
+
+.image-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* Remove a transição global para o zoom da imagem para aplicar um mais específico */
+    transition: transform 0.6s ease-out; 
+}
+
+.image-item:hover img {
+    transform: scale(1.1); /* Zoom suave na imagem */
+}
+
+/* 7. Grade de Posts do Blog (3 Colunas) */
+.blog-post {
+    text-align: left;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateY(0);
+}
+
+.blog-post:hover {
+    transform: translateY(-8px); /* Efeito de "levitar" no hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content h3 {
+    font-size: 1.4em;
+    margin-top: 5px;
+}
+
+.blog-content a {
+    text-decoration: underline;
+    text-underline-offset: 4px; /* Mais atrativo */
+}
+
+/* 8. Rodapé (Footer) */
+footer {
+    background-color: var(--footer-bg); /* Mudança de cor */
+    color: var(--gray-light);
+    padding: 40px 0;
+}
+
+footer h4 {
+    color: var(--white);
+    border-bottom: 2px solid var(--primary-green); /* Mudança de cor */
+}
+
+footer a {
+    color: var(--gray-light);
+}
+
+footer a:hover {
+    color: var(--primary-green); /* Mudança de cor */
+}
+
+
+/* Responsividade - Mantida */
+@media (max-width: 992px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .description-info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; 
+    }
+    .hero h1 {
+        font-size: 2.8em;
+    }
+    .blog-grid, .image-grid {
+        grid-template-columns: 1fr;
+    }
+}
