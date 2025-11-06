@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
               <div className="footer__contact-item">
                 <strong>Horário de Funcionamento:</strong>
                 <span>Segunda a Sexta<br />
-                6:45 às 22:50</span>
+                6:45 às 23:00</span>
               </div>
             </div>
           </div>

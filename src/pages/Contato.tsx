@@ -77,7 +77,7 @@ const Contato: React.FC = () => {
                   <h3 className="contact-info-card__title">Horário de Funcionamento</h3>
                   <p className="contact-info-card__content">
                     <strong>Segunda a Sexta:</strong><br />
-                    6:45 às 22:50<br /><br />
+                    6:45 às 23:00<br /><br />
                     
                     <strong>Secretaria:</strong><br />
                     8:00 às 17:00
