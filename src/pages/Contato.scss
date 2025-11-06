@@ -15,6 +15,55 @@
   }
 }
 
+// Schedule Info Full Width
+.schedule-info-full {
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-3xl);
+  border-top: 1px solid var(--gray-200);
+
+  .schedule-info__title {
+    color: var(--primary-teal);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .schedule-item {
+    background: var(--gray-50);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    border: 1px solid var(--gray-200);
+    
+    &__period {
+      color: var(--primary-teal);
+      margin-bottom: var(--spacing-sm);
+      font-weight: 600;
+    }
+    
+    &__time {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    &__gate {
+      color: var(--gray-600);
+      font-size: var(--font-size-sm);
+    }
+  }
+}
+
 // Contact Form Section
 .contact-form-section {
   &__title {
@@ -160,11 +209,13 @@
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-md);
+    text-align: left;
   }
 
   &__content {
     color: var(--gray-700);
     line-height: var(--line-height-relaxed);
+    text-align: left;
 
     strong {
       color: var(--gray-900);
