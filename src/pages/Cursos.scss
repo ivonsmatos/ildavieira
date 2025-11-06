@@ -241,7 +241,7 @@
 // CTA Section
 .courses-cta {
   padding: var(--spacing-3xl) 0;
-  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-gold) 100%);
+  background: var(--primary-teal);
   color: var(--white);
 
   &__content {
