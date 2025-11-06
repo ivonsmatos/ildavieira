@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { getCloudinaryUrl, SCHOOL_IMAGES } from '../utils/cloudinary'
 import './Home.scss'
 
 const Home: React.FC = () => {
@@ -24,19 +23,19 @@ const Home: React.FC = () => {
       title: 'Infraestrutura Moderna',
       description: 'Laboratórios equipados, quadra coberta, biblioteca e salas climatizadas.',
       icon: '🏢',
-      image: SCHOOL_IMAGES.laboratorioFarmacia
+      image: '/imagens/Ilda vieira vilela (1).webp'
     },
     {
       title: 'Corpo Docente Qualificado',
       description: 'Professores especialistas e mestres com experiência de mercado.',
       icon: '👨‍🏫',
-      image: SCHOOL_IMAGES.salaAula
+      image: '/imagens/Ilda vieira vilela (2).webp'
     },
     {
       title: 'Inclusão e Acessibilidade',
       description: 'Sala de recursos para PCDs com atendimento especializado.',
       icon: '♿',
-      image: SCHOOL_IMAGES.biblioteca
+      image: '/imagens/Ilda vieira vilela (3).webp'
     }
   ]
 
@@ -56,10 +55,14 @@ const Home: React.FC = () => {
       <section className="hero" ref={heroRef}>
         <div className="hero__background">
           <img 
-            src={getCloudinaryUrl(SCHOOL_IMAGES.hero, { width: 1920, height: 1080 })}
+            src="/imagens/Ilda vieira vilela (4).webp"
             alt="Fachada da Escola Ilda Vieira Vilela"
             className="hero__bg-image"
             loading="eager"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/imagens/Ilda vieira vilela (4).jpg";
+            }}
           />
           <div className="hero__overlay"></div>
         </div>
@@ -120,9 +123,13 @@ const Home: React.FC = () => {
             </div>
             <div className="about__image">
               <img 
-                src={getCloudinaryUrl(SCHOOL_IMAGES.entradaPrincipal, { width: 600, height: 400 })}
+                src="/imagens/Ilda vieira vilela (5).webp"
                 alt="Entrada principal da Escola Ilda Vieira Vilela"
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/imagens/Ilda vieira vilela (5).jpeg";
+                }}
               />
             </div>
           </motion.div>
@@ -174,18 +181,24 @@ const Home: React.FC = () => {
               >
                 <div className="highlights__card-image">
                   <img 
-                    src={getCloudinaryUrl(highlight.image, { width: 400, height: 250 })}
+                    src={highlight.image}
                     alt={highlight.title}
                     loading="lazy"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      // Use uma imagem de placeholder relacionada ao tema educacional
-                      const placeholders = [
-                        'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop&crop=center', // Classroom
-                        'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=250&fit=crop&crop=center', // Teachers
-                        'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop&crop=center'  // Library
+                      // Fallback para outras versões da mesma imagem ou placeholder
+                      const fallbacks = [
+                        `/imagens/Ilda vieira vilela (${index + 1}).jpg`,
+                        `/imagens/Ilda vieira vilela (${index + 1}).png`,
+                        'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop&crop=center'
                       ];
-                      target.src = placeholders[index] || placeholders[0];
+                      
+                      const currentIndex = fallbacks.findIndex(fb => target.src.endsWith(fb.split('/').pop() || ''));
+                      const nextFallback = fallbacks[currentIndex + 1];
+                      
+                      if (nextFallback) {
+                        target.src = nextFallback;
+                      }
                     }}
                   />
                   <div className="highlights__card-icon">{highlight.icon}</div>

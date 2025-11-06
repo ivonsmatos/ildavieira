@@ -1,23 +1,22 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { getCloudinaryUrl, SCHOOL_IMAGES } from '../utils/cloudinary'
 import './NossaEscola.scss'
 
 const NossaEscola: React.FC = () => {
   const infrastructure = [
-    { name: 'Quadra esportiva coberta', image: SCHOOL_IMAGES.quadra, icon: '🏀' },
-    { name: 'Laboratório de ciências', image: SCHOOL_IMAGES.laboratorio, icon: '🔬' },
-    { name: 'Laboratório de farmácia', image: SCHOOL_IMAGES.laboratorioFarmacia, icon: '💊' },
-    { name: 'Laboratório de química', image: SCHOOL_IMAGES.laboratorioQuimica, icon: '⚗️' },
-    { name: 'Biblioteca/Sala de leitura', image: SCHOOL_IMAGES.biblioteca, icon: '📚' },
-    { name: 'Sala de informática', image: SCHOOL_IMAGES.salaInformatica, icon: '💻' },
-    { name: 'Refeitório', image: SCHOOL_IMAGES.refeitorio, icon: '🍽️' },
-    { name: 'Pátio coberto e descoberto', image: SCHOOL_IMAGES.patio, icon: '🌳' },
-    { name: 'Auditório', image: SCHOOL_IMAGES.auditorio, icon: '🎭' },
-    { name: 'Salas de aula climatizadas', image: SCHOOL_IMAGES.salaAula, icon: '🏫' },
-    { name: 'Secretaria', image: SCHOOL_IMAGES.secretaria, icon: '📋' },
-    { name: 'Entrada principal', image: SCHOOL_IMAGES.entradaPrincipal, icon: '🚪' }
+    { name: 'Quadra esportiva coberta', image: '/imagens/Ilda vieira vilela (6).jpeg', icon: '🏀' },
+    { name: 'Laboratório de ciências', image: '/imagens/Ilda vieira vilela (7).jpeg', icon: '🔬' },
+    { name: 'Laboratório de farmácia', image: '/imagens/Ilda vieira vilela (8).jpeg', icon: '💊' },
+    { name: 'Laboratório de química', image: '/imagens/Ilda vieira vilela (9).jpeg', icon: '⚗️' },
+    { name: 'Biblioteca/Sala de leitura', image: '/imagens/Ilda vieira vilela (3).webp', icon: '📚' },
+    { name: 'Sala de informática', image: '/imagens/Ilda vieira vilela (1).webp', icon: '💻' },
+    { name: 'Refeitório', image: '/imagens/Ilda vieira vilela (2).webp', icon: '🍽️' },
+    { name: 'Pátio coberto e descoberto', image: '/imagens/Ilda vieira vilela (4).webp', icon: '🌳' },
+    { name: 'Auditório', image: '/imagens/Ilda vieira vilela (5).webp', icon: '🎭' },
+    { name: 'Salas de aula climatizadas', image: '/imagens/Ilda vieira vilela (1).jpg', icon: '🏫' },
+    { name: 'Secretaria', image: '/imagens/Ilda vieira vilela (2).jpg', icon: '📋' },
+    { name: 'Entrada principal', image: '/imagens/Ilda vieira vilela (3).jpg', icon: '🚪' }
   ]
 
   const management = [
@@ -43,9 +42,13 @@ const NossaEscola: React.FC = () => {
       <section className="page-hero">
         <div className="page-hero__background">
           <img 
-            src={getCloudinaryUrl(SCHOOL_IMAGES.hero, { width: 1920, height: 600 })}
+            src="/imagens/Ilda vieira vilela (4).webp"
             alt="Escola Ilda Vieira Vilela"
             className="page-hero__bg-image"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/imagens/Ilda vieira vilela (4).jpg";
+            }}
           />
           <div className="page-hero__overlay"></div>
         </div>
@@ -189,9 +192,18 @@ const NossaEscola: React.FC = () => {
               >
                 <div className="infrastructure__card-image">
                   <img 
-                    src={getCloudinaryUrl(item.image, { width: 400, height: 250 })}
+                    src={item.image}
                     alt={item.name}
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      // Fallback para versão jpg se webp falhar
+                      if (target.src.includes('.webp')) {
+                        target.src = target.src.replace('.webp', '.jpg');
+                      } else if (target.src.includes('.jpg')) {
+                        target.src = target.src.replace('.jpg', '.png');
+                      }
+                    }}
                   />
                   <div className="infrastructure__card-icon">{item.icon}</div>
                 </div>
