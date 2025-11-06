@@ -12,7 +12,7 @@ const Cursos: React.FC = () => {
       id: 'desenvolvimento-sistemas',
       title: 'Desenvolvimento de Sistemas',
       description: 'Forme-se um profissional completo em programação e desenvolvimento de software.',
-      duration: '3 semestres',
+      duration: '2 semestres',
       shift: '2°TC e 3°TA',
       skills: [
         'Lógica de Programação e Algoritmos',
@@ -30,7 +30,7 @@ const Cursos: React.FC = () => {
       id: 'vendas',
       title: 'Técnico em Vendas',
       description: 'Desenvolva habilidades em vendas, marketing e relacionamento com clientes.',
-      duration: '3 semestres',
+      duration: '2 semestres',
       shift: '2°TE e 3°TC',
       skills: [
         'Técnicas de Vendas e Negociação',
@@ -48,7 +48,7 @@ const Cursos: React.FC = () => {
       id: 'logistica',
       title: 'Técnico em Logística',
       description: 'Especialize-se na gestão da cadeia de suprimentos e operações logísticas.',
-      duration: '3 semestres',
+      duration: '2 semestres',
       shift: '2°TD e 3°TB',
       skills: [
         'Gestão da Cadeia de Suprimentos',
@@ -66,7 +66,7 @@ const Cursos: React.FC = () => {
       id: 'farmacia',
       title: 'Técnico em Farmácia',
       description: 'Atue na área farmacêutica com conhecimento em medicamentos e manipulação.',
-      duration: '3 semestres',
+      duration: '2 semestres',
       shift: '2°TA',
       skills: [
         'Farmacologia e Farmacotécnica',
