@@ -6,18 +6,15 @@ import './NossaEscola.scss'
 
 const NossaEscola: React.FC = () => {
   const infrastructure = [
-    { name: 'Quadra esportiva coberta', image: getCloudinaryUrl(SCHOOL_IMAGES.quadra, { width: 400, quality: 85 }), icon: '🏀' },
-    { name: 'Laboratório de ciências', image: getCloudinaryUrl(SCHOOL_IMAGES.laboratorio, { width: 400, quality: 85 }), icon: '🔬' },
-    { name: 'Laboratório de farmácia', image: getCloudinaryUrl(SCHOOL_IMAGES.laboratorioFarmacia, { width: 400, quality: 85 }), icon: '💊' },
-    { name: 'Laboratório de química', image: getCloudinaryUrl(SCHOOL_IMAGES.laboratorioQuimica, { width: 400, quality: 85 }), icon: '⚗️' },
-    { name: 'Biblioteca/Sala de leitura', image: getCloudinaryUrl(SCHOOL_IMAGES.biblioteca, { width: 400, quality: 85 }), icon: '📚' },
-    { name: 'Sala de informática', image: getCloudinaryUrl(SCHOOL_IMAGES.salaInformatica, { width: 400, quality: 85 }), icon: '💻' },
-    { name: 'Refeitório', image: getCloudinaryUrl(SCHOOL_IMAGES.refeitorio, { width: 400, quality: 85 }), icon: '🍽️' },
-    { name: 'Pátio coberto e descoberto', image: getCloudinaryUrl(SCHOOL_IMAGES.patio, { width: 400, quality: 85 }), icon: '🌳' },
-    { name: 'Auditório', image: getCloudinaryUrl(SCHOOL_IMAGES.auditorio, { width: 400, quality: 85 }), icon: '🎭' },
-    { name: 'Salas de aula climatizadas', image: getCloudinaryUrl(SCHOOL_IMAGES.salaAula, { width: 400, quality: 85 }), icon: '🏫' },
-    { name: 'Secretaria', image: getCloudinaryUrl(SCHOOL_IMAGES.secretaria, { width: 400, quality: 85 }), icon: '📋' },
-    { name: 'Entrada principal', image: getCloudinaryUrl(SCHOOL_IMAGES.entradaPrincipal, { width: 400, quality: 85 }), icon: '🚪' }
+    { name: 'Quadra esportiva coberta', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401470/Ilda_vieira_vilela_3_cgejjj.png', icon: '🏀' },
+    { name: 'Laboratório de ciências', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401467/Ilda_vieira_vilela_1_jcvlfz.jpg', icon: '🔬' },
+    { name: 'Laboratório de farmácia', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_1_qbg5vx.jpg', icon: '💊' },
+    { name: 'Laboratório de química', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_5_ngq8if.png', icon: '⚗️' },
+    { name: 'Biblioteca/Sala de leitura', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401468/Ilda_vieira_vilela_2_rx7fui.jpg', icon: '📚' },
+    { name: 'Sala de informática', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_9_zfgedj.jpg', icon: '💻' },
+    { name: 'Refeitório', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401465/Ilda_vieira_vilela_4_dlcypd.webp', icon: '🍽️' },
+    { name: 'Auditório', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401467/Ilda_vieira_vilela_1_cjkywu.png', icon: '🎭' },
+    { name: 'Entrada principal', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401470/Ilda_vieira_vilela_3_dclr4v.jpg', icon: '🚪' }
   ]
 
   const management = [

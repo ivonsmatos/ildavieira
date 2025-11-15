@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { getCloudinaryUrl, SCHOOL_IMAGES } from '../utils/cloudinary'
 import './Home.scss'
 
 const Home: React.FC = () => {
@@ -24,19 +23,19 @@ const Home: React.FC = () => {
       title: 'Infraestrutura Moderna',
       description: 'Laboratórios equipados, quadra coberta, biblioteca e salas climatizadas.',
       icon: '🏢',
-      image: '/imagens/Ilda vieira vilela (1).webp'
+      image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_9_zfgedj.jpg'
     },
     {
       title: 'Corpo Docente Qualificado',
       description: 'Professores especialistas e mestres com experiência de mercado.',
       icon: '👨‍🏫',
-      image: '/imagens/Ilda vieira vilela (2).webp'
+      image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_1_qbg5vx.jpg'
     },
     {
       title: 'Inclusão e Acessibilidade',
       description: 'Sala de recursos para PCDs com atendimento especializado.',
       icon: '♿',
-      image: '/imagens/Ilda vieira vilela (3).webp'
+      image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401469/Ilda_vieira_vilela_3_chljdk.jpg'
     }
   ]
 
@@ -120,9 +119,9 @@ const Home: React.FC = () => {
             </div>
             <div className="about__image">
               <img 
-                src={getCloudinaryUrl(SCHOOL_IMAGES.entradaPrincipal, { width: 600, quality: 85, format: 'webp' })}
-                alt="Entrada principal da Escola Ilda Vieira Vilela"
-                loading="lazy"
+                src="https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_9_zfgedj.jpg" 
+                alt="Entrada principal da Escola Ilda Vieira Vilela" 
+                className="about__img" 
               />
             </div>
           </motion.div>
