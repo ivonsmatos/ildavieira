@@ -19,7 +19,12 @@ const ChatbotWidget: React.FC = () => {
   }, []);
 
   const toggleChatbot = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
+
+    const messenger = document.querySelector('df-messenger') as HTMLElement | null;
+    if (messenger) {
+      messenger.style.display = isOpen ? 'none' : 'block';
+    }
   };
 
   return (
@@ -43,13 +48,12 @@ const ChatbotWidget: React.FC = () => {
       </button>
 
       {/* Chatbot Messenger */}
-      {isOpen && (
-        <df-messenger
-          chat-title="ChatIlda"
-          agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
-          language-code="pt-br"
-        ></df-messenger>
-      )}
+      <df-messenger
+        chat-title="ChatIlda"
+        agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
+        language-code="pt-br"
+        style={{ display: isOpen ? 'block' : 'none' }}
+      ></df-messenger>
     </>
   );
 };
