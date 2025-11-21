@@ -4,7 +4,7 @@ import './ChatbotWidget.scss';
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'df-messenger': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+      'df-messenger': React.ClassAttributes<HTMLElement> & React.HTMLAttributes<HTMLElement> & {
         'chat-title'?: string;
         'agent-id'?: string;
         'language-code'?: string;
