@@ -8,6 +8,8 @@ const ChatbotWidget: React.FC = () => {
     const script = document.createElement('script');
     script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
     script.async = true;
+    script.onload = () => console.log('Dialogflow script carregado com sucesso.');
+    script.onerror = () => console.error('Erro ao carregar o script do Dialogflow.');
     document.body.appendChild(script);
 
     return () => {
@@ -28,6 +30,9 @@ const ChatbotWidget: React.FC = () => {
       messenger.style.bottom = '24px';
       messenger.style.right = '24px';
       messenger.style.zIndex = '999';
+      console.log('Chatbot exibido:', isOpen);
+    } else {
+      console.error('Elemento df-messenger não encontrado no DOM.');
     }
   };
 
