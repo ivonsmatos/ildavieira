@@ -11,24 +11,22 @@ declare global {
 
 const ChatbotWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
-    if (!isOpen) {
-      setHasLoaded(false);
-      setShowFallback(false);
-      return;
-    }
+    const script = document.createElement('script');
+    script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
+    script.async = true;
+    script.onload = () => console.log('Dialogflow script carregado com sucesso.');
+    script.onerror = () => console.error('Erro ao carregar o script do Dialogflow.');
+    document.body.appendChild(script);
 
-    const timer = window.setTimeout(() => {
-      if (!hasLoaded) {
-        setShowFallback(true);
+    return () => {
+      const existingScript = document.querySelector(`script[src="${script.src}"]`);
+      if (existingScript) {
+        existingScript.remove();
       }
-    }, 5000);
-
-    return () => window.clearTimeout(timer);
-  }, [isOpen, hasLoaded]);
+    };
+  }, []);
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
@@ -38,6 +36,8 @@ const ChatbotWidget: React.FC = () => {
     setHasLoaded(true);
     setShowFallback(false);
   };
+
+  const dialogflowUrl = 'https://dialogflow.cloud.google.com/api-client/demo/embedded/96a79b61-798d-4632-a1ce-1c62d81b1553';
 
   return (
     <>
@@ -73,7 +73,6 @@ const ChatbotWidget: React.FC = () => {
             </button>
           </div>
           <div className="chatbot-content">
-            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
             <df-messenger
               chat-title="ChatIlda"
               agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
