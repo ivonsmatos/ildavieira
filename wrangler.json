@@ -1,0 +1,8 @@
+{
+  "name": "worker-name",
+  "compatibility_date": "2025-11-21",
+  "main": "dist/index.js",
+  "assets": {
+    "directory": "dist"
+  }
+}
