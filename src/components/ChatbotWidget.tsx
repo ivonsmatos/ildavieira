@@ -4,7 +4,13 @@ import './ChatbotWidget.scss';
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'df-messenger': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      'df-messenger': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'chat-title'?: string;
+        'agent-id'?: string;
+        'language-code'?: string;
+        intent?: string;
+        'chat-icon'?: string;
+      };
     }
   }
 }
@@ -31,13 +37,6 @@ const ChatbotWidget: React.FC = () => {
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
   };
-
-  const handleLoad = () => {
-    setHasLoaded(true);
-    setShowFallback(false);
-  };
-
-  const dialogflowUrl = 'https://dialogflow.cloud.google.com/api-client/demo/embedded/96a79b61-798d-4632-a1ce-1c62d81b1553';
 
   return (
     <>
@@ -73,6 +72,7 @@ const ChatbotWidget: React.FC = () => {
             </button>
           </div>
           <div className="chatbot-content">
+            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
             <df-messenger
               chat-title="ChatIlda"
               agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
