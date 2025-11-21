@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './ChatbotWidget.scss';
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'df-messenger': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    }
+  }
+}
+
 const ChatbotWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -30,8 +38,6 @@ const ChatbotWidget: React.FC = () => {
     setHasLoaded(true);
     setShowFallback(false);
   };
-
-  const dialogflowUrl = 'https://dialogflow.cloud.google.com/api-client/demo/embedded/96a79b61-798d-4632-a1ce-1c62d81b1553';
 
   return (
     <>
@@ -67,26 +73,12 @@ const ChatbotWidget: React.FC = () => {
             </button>
           </div>
           <div className="chatbot-content">
-            <iframe
-              allow="microphone;"
-              width="100%"
-              height="100%"
-              src={dialogflowUrl}
-              title="Chatbot Escola Ilda Vieira Vilela"
-              onLoad={handleLoad}
-            />
-            {showFallback && (
-              <div className="chatbot-fallback" role="status">
-                <p>Não foi possível carregar o atendente automático no momento.</p>
-                <p>
-                  Acesse diretamente em{' '}
-                  <a href={dialogflowUrl} target="_blank" rel="noopener noreferrer">
-                    dialogflow.cloud.google.com
-                  </a>
-                  .
-                </p>
-              </div>
-            )}
+            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+            <df-messenger
+              chat-title="ChatIlda"
+              agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
+              language-code="pt-br"
+            ></df-messenger>
           </div>
         </div>
       )}
