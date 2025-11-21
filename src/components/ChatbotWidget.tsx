@@ -24,6 +24,10 @@ const ChatbotWidget: React.FC = () => {
     const messenger = document.querySelector('df-messenger') as HTMLElement | null;
     if (messenger) {
       messenger.style.display = isOpen ? 'none' : 'block';
+      messenger.style.position = 'fixed';
+      messenger.style.bottom = '24px';
+      messenger.style.right = '24px';
+      messenger.style.zIndex = '999';
     }
   };
 
