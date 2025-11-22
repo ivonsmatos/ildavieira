@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ChatbotWidget: React.FC = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      const existingScript = document.querySelector(`script[src="${script.src}"]`);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
-    <iframe 
-      width="350" 
-      height="430" 
-      allow="microphone;" 
-      src="https://console.dialogflow.com/api-client/demo/embedded/96a79b61-798d-4632-a1ce-1c62d81b1553">
-    </iframe>
+    <df-messenger
+      chat-title="ChatIlda"
+      agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
+      language-code="pt-br"
+    ></df-messenger>
   );
 };
 
