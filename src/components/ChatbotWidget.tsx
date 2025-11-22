@@ -30,14 +30,7 @@ const ChatbotWidget: React.FC = () => {
     document.head.appendChild(style);
   }, []);
 
-  return (
-    <df-messenger
-      chat-title="ChatIlda"
-      agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
-      language-code="pt-br"
-      intent="WELCOME"
-    ></df-messenger>
-  );
+  return null;
 };
 
 export default ChatbotWidget;
