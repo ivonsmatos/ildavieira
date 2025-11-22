@@ -19,8 +19,6 @@ const ChatbotWidget: React.FC = () => {
     const script = document.createElement('script');
     script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
     script.async = true;
-    script.onload = () => console.log('Dialogflow script carregado com sucesso.');
-    script.onerror = () => console.error('Erro ao carregar o script do Dialogflow.');
     document.body.appendChild(script);
 
     return () => {
