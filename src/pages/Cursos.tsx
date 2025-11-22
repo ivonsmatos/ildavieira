@@ -79,6 +79,25 @@ const Cursos: React.FC = () => {
       ],
       marketDemand: 'alta',
       employabilityRate: 92
+    },
+    {
+      id: 'ciencias-dados',
+      title: 'Técnico em Ciências de Dados',
+      description: 'Torne-se um especialista em análise de dados e inteligência artificial.',
+      duration: '2 semestres',
+      shift: '2°TB e 3°TD',
+      skills: [
+        'Matemática e Estatística',
+        'Programação: Python, R',
+        'Bibliotecas para Análise de Dados: Pandas, NumPy',
+        'Coleta e Organização de Dados',
+        'Análise de Dados e Extração de Insights',
+        'Inteligência Artificial e Machine Learning',
+        'Banco de Dados SQL e NoSQL',
+        'Visualização de Dados'
+      ],
+      marketDemand: 'alta',
+      employabilityRate: 90
     }
   ]
 
@@ -96,6 +115,7 @@ const Cursos: React.FC = () => {
       case 'vendas': return '📊'
       case 'logistica': return '📦'
       case 'farmacia': return '💊'
+      case 'ciencias-dados': return '📈'
       default: return '🎓'
     }
   }
@@ -106,9 +126,9 @@ const Cursos: React.FC = () => {
         <title>Cursos Técnicos | Ilda Vieira Vilela - Formação Profissional</title>
         <meta 
           name="description" 
-          content="Cursos técnicos em Desenvolvimento de Sistemas, Vendas, Logística e Farmácia. Alta empregabilidade e infraestrutura moderna na Escola Ilda Vieira Vilela." 
+          content="Cursos técnicos em Desenvolvimento de Sistemas, Vendas, Logística, Farmácia e Ciências de Dados. Alta empregabilidade e infraestrutura moderna na Escola Ilda Vieira Vilela." 
         />
-        <meta name="keywords" content="cursos técnicos, desenvolvimento sistemas, vendas, logística, farmácia, grajaú, cocaia" />
+        <meta name="keywords" content="cursos técnicos, desenvolvimento sistemas, vendas, logística, farmácia, ciências de dados, grajaú, cocaia" />
       </Helmet>
 
       {/* Hero Section */}
@@ -161,7 +181,7 @@ const Cursos: React.FC = () => {
                 <div className="stat-item__label">Taxa de Empregabilidade</div>
               </div>
               <div className="stat-item">
-                <div className="stat-item__number">4</div>
+                <div className="stat-item__number">5</div>
                 <div className="stat-item__label">Cursos Disponíveis</div>
               </div>
               <div className="stat-item">
