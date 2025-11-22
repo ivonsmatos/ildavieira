@@ -69,6 +69,7 @@
                  img-src 'self' data: https: https://res.cloudinary.com https://upload.wikimedia.org; 
                  font-src 'self' https://fonts.gstatic.com data:; 
                  connect-src 'self' https://dialogflow.cloud.google.com https://www.gstatic.com https://api.dialogflow.com;">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </head>
 <body>
     <div id="root">
@@ -76,7 +77,11 @@
             <img src="https://res.cloudinary.com/dywhdgppg/image/upload/v1763245600/logo-ilda-vieira-vilela_jjk4zv.png" alt="Logo Ilda Vieira Vilela" class="pre-app-logo">
         </header>
     </div>
-    <iframe height="430" width="350" src="https://bot.dialogflow.com/96a79b61-798d-4632-a1ce-1c62d81b1553"></iframe>
+    <df-messenger
+        chat-title="ChatIlda"
+        agent-id="96a79b61-798d-4632-a1ce-1c62d81b1553"
+        language-code="pt-br"
+    ></df-messenger>
     <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
