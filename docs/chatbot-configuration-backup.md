@@ -138,3 +138,7 @@ Os estilos foram configurados para garantir a visibilidade e posicionamento do c
   </body>
 </html>
 ```
+
+## Documentação do Dialogflow Messenger
+
+Para mais informações sobre a integração do Dialogflow Messenger, consulte a [documentação oficial](https://docs.cloud.google.com/dialogflow/es/docs/integrations/dialogflow-messenger?hl=pt-br).
