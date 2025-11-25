@@ -13,13 +13,13 @@ const NossaEscola: React.FC = () => {
     { name: 'Biblioteca/Sala de leitura', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401468/Ilda_vieira_vilela_2_rx7fui.jpg', icon: '📚' },
     { name: 'Sala de informática', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401466/Ilda_vieira_vilela_9_zfgedj.jpg', icon: '💻' },
     { name: 'Refeitório', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401465/Ilda_vieira_vilela_4_dlcypd.webp', icon: '🍽️' },
-    { name: 'Auditório', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401467/Ilda_vieira_vilela_1_cjkywu.png', icon: '🎭' },
-    { name: 'Entrada principal', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1762401470/Ilda_vieira_vilela_3_dclr4v.jpg', icon: '🚪' }
+    { name: 'Auditório', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1764098101/Auditorio_escola_ilda_vieira_smwkfb.jpg', icon: '🎭' },
+    { name: 'Entrada principal', image: 'https://res.cloudinary.com/dywhdgppg/image/upload/v1764098101/Entrada_escola_ilda_vieira_tpnrd2.jpg', icon: '🚪' }
   ]
 
   const management = [
     { role: 'Diretor', name: 'Jonas Cruz de Azevedo' },
-    { role: 'Vice-Diretora', name: 'Cristiano Antunes Macedo' },
+    { role: 'Vice-Diretor', name: 'Cristiano Antunes Macedo' },
     { role: 'Vice-Diretora', name: 'Debora Novaes Alves' },
     { role: 'Vice-Diretora', name: 'Janaina Gomes Ribeiro' },
     { role: 'Coordenador', name: 'Henrique Novais Silva' },
