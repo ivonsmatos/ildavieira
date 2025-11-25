@@ -90,6 +90,20 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Logos */}
+          <div className="footer__logos">
+            <img 
+              src="https://res.cloudinary.com/dywhdgppg/image/upload/v1763245600/logo-ilda-vieira-vilela_jjk4zv.png" 
+              alt="Logo Escola Ilda Vieira Vilela" 
+              className="footer__logo"
+            />
+            <img 
+              src="https://res.cloudinary.com/dywhdgppg/image/upload/v1764101409/governo_sp_ninrft.png" 
+              alt="Logo Governo de São Paulo" 
+              className="footer__logo"
+            />
+          </div>
         </div>
 
         {/* Rodapé Bottom */}
