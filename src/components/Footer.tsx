@@ -94,11 +94,6 @@ const Footer: React.FC = () => {
           {/* Logos */}
           <div className="footer__logos">
             <img 
-              src="https://res.cloudinary.com/dywhdgppg/image/upload/v1763245600/logo-ilda-vieira-vilela_jjk4zv.png" 
-              alt="Logo Escola Ilda Vieira Vilela" 
-              className="footer__logo"
-            />
-            <img 
               src="https://res.cloudinary.com/dywhdgppg/image/upload/v1764101409/governo_sp_ninrft.png" 
               alt="Logo Governo de São Paulo" 
               className="footer__logo"
@@ -114,7 +109,7 @@ const Footer: React.FC = () => {
               Todos os direitos reservados.
             </p>
             <div className="footer__credits">
-              <span>Desenvolvido com ❤️ para a educação</span>
+              <span>Desenvolvido com ❤️ para a educação 2°TC</span>
             </div>
           </div>
         </div>

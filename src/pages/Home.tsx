@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   const stats = [
     { number: '1000+', label: 'Alunos Matriculados', icon: '👥' },
     { number: '90%', label: 'Taxa de Empregabilidade', icon: '📈' },
-    { number: '4', label: 'Cursos Técnicos', icon: '🎓' },
+    { number: '5', label: 'Cursos Técnicos', icon: '🎓' },
     { number: '10+', label: 'Anos de Excelência', icon: '⭐' }
   ]
 
