@@ -60,10 +60,11 @@ const Footer: React.FC = () => {
           <div className="footer__section">
             <h4 className="footer__subtitle">Cursos Técnicos</h4>
             <nav className="footer__nav">
-              <span className="footer__link">Desenvolvimento de Sistemas</span>
-              <span className="footer__link">Técnico em Vendas</span>
-              <span className="footer__link">Técnico em Logística</span>
-              <span className="footer__link">Técnico em Farmácia</span>
+              <Link to="/cursos" className="footer__link">Desenvolvimento de Sistemas</Link>
+              <Link to="/cursos" className="footer__link">Técnico em Vendas</Link>
+              <Link to="/cursos" className="footer__link">Técnico em Logística</Link>
+              <Link to="/cursos" className="footer__link">Técnico em Farmácia</Link>
+              <Link to="/cursos" className="footer__link">Técnico em Ciências de Dados</Link>
             </nav>
           </div>
 
